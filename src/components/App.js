@@ -1,14 +1,20 @@
-import React from 'react';
+import React from "react";
 import Dashboard from "./Dashboard";
 import Login from "./Login";
 import useLocalStorage from "../hooks/useLocalStorage";
+import { ContactsProvider } from "../contexts/ContactsProvider";
+import { ConversationsProvider } from "../contexts/ConversationsProvider";
 
 export default function App() {
-  const [id, setId] = useLocalStorage('id');
+  const [id, setId] = useLocalStorage("id");
 
-  return (
-    <div className="flex flex-col min-h-screen">
-        {id ? <Dashboard id={id} /> : <Login onIdSubmit={setId} />}
-    </div>
+  const dashboard = (
+    <ContactsProvider>
+      <ConversationsProvider>
+        <Dashboard id={id} />
+      </ConversationsProvider>
+    </ContactsProvider>
   );
+
+  return id ? dashboard : <Login onIdSubmit={setId} />;
 }
