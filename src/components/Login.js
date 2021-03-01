@@ -17,7 +17,7 @@ export default function Login({ onIdSubmit }) {
   return (
     <div className="flex items-center justify-center w-full">
       <form className="w-9/12" onSubmit={handleSubmit}>
-        <ul className="w-full flex justify-center   ">
+        <ul className="w-full flex justify-center">
           <p className="mb-2 w-full flex flex-col">
             <label htmlFor="ID">Enter your ID</label>
             <input className="p-2 border-2 border-gray-300 rounded" type="text" ref={idRef} required/>
