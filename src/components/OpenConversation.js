@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, useCallback } from "react";
+import React, { useState, useCallback } from "react";
 import { Form, InputGroup, Button } from "react-bootstrap";
 import { useConversations } from "../contexts/ConversationsProvider";
 
@@ -21,7 +21,7 @@ export default function OpenConversation() {
   }
 
   return (
-    <div className="flex flex-col flex-grow">
+    <div className="flex flex-col flex-grow ">
       <div className="flex-grow overflow-auto">
         <div className=" flex flex-col items-start justify-end px-3">
           {selectedConversation.messages.map((message, index) => {

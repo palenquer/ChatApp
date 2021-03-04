@@ -15,7 +15,7 @@ export default function Login({ onIdSubmit }) {
   }
 
   return (
-    <div className="flex items-center justify-center w-full">
+    <div className="flex items-center justify-center w-full h-screen">
       <form className="w-9/12" onSubmit={handleSubmit}>
         <ul className="w-full flex justify-center">
           <p className="mb-2 w-full flex flex-col">
